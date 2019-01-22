@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd ">
+	<context:component-scan base-package="cn.zhuoqianmingyue"></context:component-scan>
+	<bean id="country" class="cn.zhuoqianmingyue.ioc.di.Country">
+		<property name="name" value="CHINA"/>
+	</bean>
+	<bean id="user" class="cn.zhuoqianmingyue.ioc.di.User">
+		<property name="name" value="zhuoqianmingyue"/>
+		<property name="age" value="20"/>
+		<property name="country" ref="country"></property>
+		<property name="address">
+			<list>
+				<value>北京</value>
+				<value>河北</value>
+			</list>
+		</property>
+		<property name="address2">
+			<set>
+				<value>北京</value>
+				<value>河北</value>
+			</set>
+		</property>
+		<property name="addressMap">
+			<map>
+				<entry key="BEIJING" value="北京"/>
+				<entry key="HEBEI" value="河北"/>
+			</map>
+		</property>
+	</bean>
+
+	 
+</beans>
