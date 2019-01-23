@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd ">
+	<context:component-scan base-package="cn.zhuoqianmingyue"></context:component-scan>
+	<context:component-scan base-package="cn.zhuoqianmingyue.ioc.di.annotation"></context:component-scan>
+	<bean id="country" class="cn.zhuoqianmingyue.ioc.di.xml.Country">
+		<property name="name" value="CHINA"/>
+	</bean>
+	<bean id="addressBean" class="cn.zhuoqianmingyue.ioc.di.xml.Address">
+		<property name="name" value="山西"/>
+	</bean>
+	<bean id="addressBean2" class="cn.zhuoqianmingyue.ioc.di.xml.Address">
+		<property name="name" value="湖南"/>
+	</bean>
+	<bean id="user" class="cn.zhuoqianmingyue.ioc.di.xml.User">
+		<property name="name" value="zhuoqianmingyue"/>
+		<property name="age" value="20"/>
+		<property name="country" ref="country"></property>
+		<property name="addressList">
+			<list>
+				<value>北京</value>
+				<value>河北</value>
+			</list>
+		</property>
+		<property name="addressClassList">
+			<list>
+				<ref bean="addressBean"/>
+				<ref bean="addressBean2"/>
+			</list>
+		</property>
+		<property name="addressSet">
+			<set>
+				<value>北京</value>
+				<value>河北</value>
+			</set>
+		</property>
+		<property name="addressClassSet">
+			<set>
+				<ref bean="addressBean"/>
+				<ref bean="addressBean2"/>
+			</set>
+		</property>
+		<property name="addressMap">
+			<map>
+				<entry key="BEIJING" value="北京"/>
+				<entry key="HEBEI" value="河北"/>
+			</map>
+		</property>
+		<property name="addressClassMap">
+			<map>
+				<entry key="BEIJING" value-ref="addressBean"/>
+				<entry key="HEBEI" value-ref="addressBean2"/>
+			</map>
+		</property>
+		
+	</bean>
+
+	 
+</beans>
