@@ -1,4 +1,4 @@
-package cn.zhuoqianmingyue.ioc.di;
+package cn.zhuoqianmingyue.ioc.di.xml;
 
 public class Country {
 	private String name;

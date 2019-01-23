@@ -9,15 +9,15 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 /**
- * BeanFactory ºÍ ApplicationContextµÄÇø±ğ
- * BeanFactory ÊÇÑÓ³Ù¼ÓÔØ£¬Ê¹ÓÃbeanÊ±²Å½øĞĞ³õÊ¼»¯
- * ApplicationContext ¼ÓÔØÅäÖÃÎÄ¼şÊ± ³õÊ¼»¯bean¶ÔÏó
- * ¹¦ÄÜ£º
- * ApplicationContext Ìá¹©ÁË¸ü¶àµÄ¹¦ÄÜ
- * ¹ú¼Ê»¯´¦Àí
- * ÊÂ¼ş´«µİ
- * Bean×Ô¶¯×°Åä
- * ¸÷ÖÖ²»Í¬Ó¦ÓÃ²ãµÄContextÊµÏÖ
+ * BeanFactory å’Œ ApplicationContextçš„åŒºåˆ«
+ * BeanFactory æ˜¯å»¶è¿ŸåŠ è½½ï¼Œä½¿ç”¨beanæ—¶æ‰è¿›è¡Œåˆå§‹åŒ–
+ * ApplicationContext åŠ è½½é…ç½®æ–‡ä»¶æ—¶ åˆå§‹åŒ–beanå¯¹è±¡
+ * åŠŸèƒ½ï¼š
+ * ApplicationContext æä¾›äº†æ›´å¤šçš„åŠŸèƒ½
+ * å›½é™…åŒ–å¤„ç†
+ * äº‹ä»¶ä¼ é€’
+ * Beanè‡ªåŠ¨è£…é…
+ * å„ç§ä¸åŒåº”ç”¨å±‚çš„Contextå®ç°
  * 
  * @author zhuoqianmingyue
  *

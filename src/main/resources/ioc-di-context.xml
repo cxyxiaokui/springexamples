@@ -16,23 +16,42 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd ">
 	<context:component-scan base-package="cn.zhuoqianmingyue"></context:component-scan>
-	<bean id="country" class="cn.zhuoqianmingyue.ioc.di.Country">
+	<context:component-scan base-package="cn.zhuoqianmingyue.ioc.di.annotation"></context:component-scan>
+	<bean id="country" class="cn.zhuoqianmingyue.ioc.di.xml.Country">
 		<property name="name" value="CHINA"/>
 	</bean>
-	<bean id="user" class="cn.zhuoqianmingyue.ioc.di.User">
+	<bean id="addressBean" class="cn.zhuoqianmingyue.ioc.di.xml.Address">
+		<property name="name" value="山西"/>
+	</bean>
+	<bean id="addressBean2" class="cn.zhuoqianmingyue.ioc.di.xml.Address">
+		<property name="name" value="湖南"/>
+	</bean>
+	<bean id="user" class="cn.zhuoqianmingyue.ioc.di.xml.User">
 		<property name="name" value="zhuoqianmingyue"/>
 		<property name="age" value="20"/>
 		<property name="country" ref="country"></property>
-		<property name="address">
+		<property name="addressList">
 			<list>
 				<value>北京</value>
 				<value>河北</value>
 			</list>
 		</property>
-		<property name="address2">
+		<property name="addressClassList">
+			<list>
+				<ref bean="addressBean"/>
+				<ref bean="addressBean2"/>
+			</list>
+		</property>
+		<property name="addressSet">
 			<set>
 				<value>北京</value>
 				<value>河北</value>
+			</set>
+		</property>
+		<property name="addressClassSet">
+			<set>
+				<ref bean="addressBean"/>
+				<ref bean="addressBean2"/>
 			</set>
 		</property>
 		<property name="addressMap">
@@ -41,6 +60,13 @@
 				<entry key="HEBEI" value="河北"/>
 			</map>
 		</property>
+		<property name="addressClassMap">
+			<map>
+				<entry key="BEIJING" value-ref="addressBean"/>
+				<entry key="HEBEI" value-ref="addressBean2"/>
+			</map>
+		</property>
+		
 	</bean>
 
 	 
