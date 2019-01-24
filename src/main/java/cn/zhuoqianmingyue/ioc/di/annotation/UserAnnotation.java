@@ -19,7 +19,7 @@ public class UserAnnotation {
 	@Autowired
 	private CountryAnnotation countryAnnotation;
 	@Autowired
-	private List<String> addressList; //= new ArrayList<String>() {{add("A");add("B");}};
+	private List<String> addressList;
 	@Autowired
 	private List<AddressAnnotation> addressClassList;
 	@Autowired
@@ -35,54 +35,36 @@ public class UserAnnotation {
 	public Map<String, AddressAnnotation> getAddressClassMap() {
 		return addressClassMap;
 	}
-	public void setAddressClassMap(Map<String, AddressAnnotation> addressClassMap) {
-		this.addressClassMap = addressClassMap;
-	}
+
 	public Set<AddressAnnotation> getAddressClassSet() {
 		return addressClassSet;
 	}
-	public void setAddressClassSet(Set<AddressAnnotation> addressClassSet) {
-		this.addressClassSet = addressClassSet;
-	}
+
 	public Set<String> getAddressSet() {
 		return addressSet;
 	}
-	public void setAddressSet(Set<String> addressSet) {
-		this.addressSet = addressSet;
-	}
+
 	public List<String> getAddressList() {
 		return addressList;
 	}
-	public void setAddressList(List<String> addressList) {
-		this.addressList = addressList;
-	}
+
 	public CountryAnnotation getCountryAnnotation() {
 		return countryAnnotation;
 	}
-	public void setCountryAnnotation(CountryAnnotation countryAnnotation) {
-		this.countryAnnotation = countryAnnotation;
-	}
+
 
 	
 	public List<AddressAnnotation> getAddressClassList() {
 		return addressClassList;
 	}
-	public void setAddressClassList(List<AddressAnnotation> addressClassList) {
-		this.addressClassList = addressClassList;
-	}
+
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 	public Integer getAge() {
 		return age;
 	}
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-	public void showUserInfo() {
-		log.info("name:"+name+" age:"+age);
-	}
+	
+	
 }
