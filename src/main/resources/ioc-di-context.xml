@@ -16,7 +16,6 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd ">
 	<context:component-scan base-package="cn.zhuoqianmingyue"></context:component-scan>
-	<context:component-scan base-package="cn.zhuoqianmingyue.ioc.di.annotation"></context:component-scan>
 	<bean id="country" class="cn.zhuoqianmingyue.ioc.di.xml.Country">
 		<property name="name" value="CHINA"/>
 	</bean>
