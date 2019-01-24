@@ -13,4 +13,10 @@ public class AddressListConfig {
 		List<String>  addressList = new ArrayList<String>() {{add("上海");add("广州");}};
 		return addressList;
 	}
+	
+	@Bean(name= {"addressList1"})
+	public List<String> getString2() {
+		List<String>  addressList = new ArrayList<String>() {{add("上海");add("广州");}};
+		return addressList;
+	}
 }

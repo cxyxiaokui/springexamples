@@ -2,7 +2,7 @@ package cn.zhuoqianmingyue.ioc.di.annotation;
 
 import org.springframework.stereotype.Component;
 
-@Component("countryAnnotation")
+@Component()
 public class CountryAnnotation {
 	private String name = "加拿大";
 
