@@ -1,6 +1,7 @@
 package cn.zhuoqianmingyue.ioc.di.autowire;
 
 public class UserDefault {
+	
 	private Country country;
 
 	public Country getCountry() {
@@ -10,5 +11,4 @@ public class UserDefault {
 	public void setCountry(Country country) {
 		this.country = country;
 	}
-	
 }

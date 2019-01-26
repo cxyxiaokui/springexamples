@@ -31,7 +31,7 @@ public class SpringAutowireTest {
 	@Test
 	public void userByType() {
 		ApplicationContext appliction = new ClassPathXmlApplicationContext("ioc-di-autowire.xml");
-		UserByType user = (UserByType)appliction.getBean("userByConstructor");
+		UserByType user = (UserByType)appliction.getBean("userByType");
 		System.out.println("country:"+user.getCountry().getName());
 	}
 	/**
@@ -43,5 +43,19 @@ public class SpringAutowireTest {
 		ApplicationContext appliction = new ClassPathXmlApplicationContext("ioc-di-autowire.xml");
 		UserByConstructor user = (UserByConstructor)appliction.getBean("userByConstructor");
 		System.out.println("country:"+user.getCountry().getName());
+	}
+	@Test
+	public void userResource() {
+		ApplicationContext appliction = new ClassPathXmlApplicationContext("ioc-di-autowire.xml");
+		UserResource user = (UserResource)appliction.getBean("userResource");
+		System.out.println("country:"+user.getCountryResource().getName());
+	}
+	
+	@Test
+	public void userAutowired() {
+		ApplicationContext appliction = new ClassPathXmlApplicationContext("ioc-di-autowire.xml");
+		UserAutowired user = (UserAutowired)appliction.getBean("userAutowired");
+		System.out.println("country:"+user.getCountryResource3().getName());
+		System.out.println("country:"+user.getCountryResource().getName());
 	}
 }
