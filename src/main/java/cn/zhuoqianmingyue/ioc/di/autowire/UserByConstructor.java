@@ -12,5 +12,4 @@ public class UserByConstructor {
 	public Country getCountry() {
 		return country;
 	}
-
 }
