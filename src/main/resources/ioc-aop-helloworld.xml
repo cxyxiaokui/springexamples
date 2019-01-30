@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd ">
+	<!-- 将冰箱ABC 声明称Spring Bean -->
+	<bean id="refrigeratorA" class="cn.zhuoqianmingyue.aop.helloword.RefrigeratorA"></bean>
+	<bean id="refrigeratorB" class="cn.zhuoqianmingyue.aop.helloword.RefrigeratorB"></bean>
+	<bean id="refrigeratorC" class="cn.zhuoqianmingyue.aop.helloword.RefrigeratorC"></bean>
+	<!-- 开门和关门通知类声明称Spring Bean -->
+	<bean id="closeAdvice" class="cn.zhuoqianmingyue.aop.helloword.CloseAdvice"></bean>
+	<bean id="openAdvice" class="cn.zhuoqianmingyue.aop.helloword.OpenAdvice"></bean>
+	<!-- aop 配置 -->
+	<aop:config>
+		<!-- aop的切面配置 ref 配置切面类（也叫通知类）的引用 -->
+		<aop:aspect ref="openAdvice">
+			<!-- aop:before 设置通知类别  method：指定我们通知（切入的方法）  pointcut 指定我们的切入点（要切入目标类的那个方法）-->
+			<aop:before method="open" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorA.into())"/>
+			<aop:before method="open" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorB.into())"/>
+			<aop:before method="open" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorC.into())"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="closeAdvice">
+			<aop:after method="close" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorA.into())"/>
+			<aop:after method="close" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorB.into())"/>
+			<aop:after method="close" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorC.into())"/>
+		</aop:aspect>
+	</aop:config>
+	
+	
+</beans>
