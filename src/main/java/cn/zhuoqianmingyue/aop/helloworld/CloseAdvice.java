@@ -1,13 +1,13 @@
-package cn.zhuoqianmingyue.aop.helloword;
+package cn.zhuoqianmingyue.aop.helloworld;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class OpenAdvice {
+public class CloseAdvice {
 	private static final Logger log = LoggerFactory.getLogger(OpenAdvice.class);
-	public void open() {
-		  log.info("开门.....");
+	public void close() {
+		  log.info("关门.....");
 	}
 }

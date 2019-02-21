@@ -27,7 +27,8 @@
 		<!-- aop的切面配置 ref 配置切面类（也叫通知类）的引用 -->
 		<aop:aspect ref="openAdvice">
 			<!-- aop:before 设置通知类别  method：指定我们通知（切入的方法）  pointcut 指定我们的切入点（要切入目标类的那个方法）-->
-			<aop:before method="open" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorA.into())"/>
+			<!--  <aop:before method="open" pointcut="execution(void cn.zhuoqianmingyue.aop.helloword.RefrigeratorA.into())"/> -->
+			<aop:before method="open" pointcut="execution(void cn.zhuoqianmingyue.aop.helloword.RefrigeratorA.into(String,Integer))"/>
 			<aop:before method="open" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorB.into())"/>
 			<aop:before method="open" pointcut="execution(public void cn.zhuoqianmingyue.aop.helloword.RefrigeratorC.into())"/>
 		</aop:aspect>
