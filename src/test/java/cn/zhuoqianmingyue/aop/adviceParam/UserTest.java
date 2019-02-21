@@ -11,6 +11,6 @@ public class UserTest {
 		ApplicationContext appliction = new ClassPathXmlApplicationContext("ioc-aop-adviceParam.xml");
 		User user = (User)appliction.getBean("user");
 		//user.run();
-		user.sub(4, 3);
+		user.join("4", "3");
 	}
 }

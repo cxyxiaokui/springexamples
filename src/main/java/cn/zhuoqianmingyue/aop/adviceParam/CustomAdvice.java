@@ -12,6 +12,11 @@ public class CustomAdvice {
 		System.out.println("before1....");
 		System.out.println("################################");
 	}
+	public void beforeWithParam(JoinPoint joinPoint,String a,String b){
+		
+		System.out.println(a+b+" beforeWithParam....");
+		System.out.println("################################");
+	}
 	public void after(JoinPoint joinPoint){
 		printTargetInfo(joinPoint);
 		System.out.println("after....");

@@ -24,6 +24,8 @@
 	<aop:config>
 		<aop:pointcut expression="execution(* *..*.*(..))" id="customAdvicePointcut"/>
 		<aop:aspect ref="customAdvice">
+			<!-- <aop:before method="beforeWithParam" pointcut="execution(* *..*.join(..)) and args(a,b)"/> -->
+			<aop:before method="beforeWithParam" pointcut="execution(* *..*.join(String,String)) and args(a,b)"/>
 			<aop:before method="before" pointcut-ref="customAdvicePointcut"/>
 			<aop:after method="after"   pointcut-ref="customAdvicePointcut"/>
 			<aop:after-returning method="afterReturning" arg-names="obj" returning="obj" pointcut-ref="customAdvicePointcut"/>

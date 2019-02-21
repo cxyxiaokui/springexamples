@@ -11,4 +11,7 @@ public class User {
 	public int sub(int x,int y) {
 		return x-y;
 	}
+	public void join(String a,String b) {
+		System.out.println(a + b);
+	}
 }
