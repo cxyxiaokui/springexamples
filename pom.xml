@@ -22,7 +22,7 @@
 		<log4j.version>1.2.14</log4j.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<!-- Test This class requires JUnit 4.12 or higher.-->
-		<junit.version>4.10</junit.version>
+		<junit.version>4.12</junit.version>
 </properties>
 	
 	<dependencies>
